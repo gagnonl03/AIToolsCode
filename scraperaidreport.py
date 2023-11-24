@@ -20,12 +20,12 @@ browser = webdriver.Chrome(options=chrome_options)
 
 base_url = "https://raid.report/leaderboard/worldsfirst/"
 raids = list()
-raids.append(["crotasend/normal", 10])
-raids.append(["rootofnightmares/normal", 10])
-raids.append(["kingsfall/normal", 10])
-raids.append(["vowofthedisciple/normal", 10])
-raids.append(["vaultofglass/normal", 10])
-raids.append(["deepstonecrypt/normal", 10])
+raids.append(["crotasend/normal", 146])
+raids.append(["rootofnightmares/normal", 909])
+raids.append(["kingsfall/normal", 173])
+raids.append(["vowofthedisciple/normal", 136])
+raids.append(["vaultofglass/normal", 134])
+raids.append(["deepstonecrypt/normal", 106])
 print(raids[0][0].split("/")[0])
 
 
@@ -53,10 +53,10 @@ for raid in raids:
         time.sleep(2)
         soup = BeautifulSoup(browser.page_source, "html.parser")
         temp = soup.find_all("a")
+        print(f"{temp_page_val} had {len(temp)} items")
         output = list()
         for item in temp:
             if item["href"][1:5] == "pgcr":
-                print(item["href"])
                 time_taken = item.find_next("span", class_="hide-on-med-and-up time-value-cell").text
                 output.append([item["href"], time_taken])
         write_to_file(raid[0], output)
