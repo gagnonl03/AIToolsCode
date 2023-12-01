@@ -20,4 +20,4 @@ def do_pcgr(name, id):
 
     with open(name, "a", encoding="utf-8") as my_csv:
         csvWriter = csv.writer(my_csv, delimiter=",")
-        csvWriter.writerow(["END GROUP"])
+        csvWriter.writerow([f"END GROUP + {id}"])
