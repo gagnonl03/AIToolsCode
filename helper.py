@@ -47,6 +47,7 @@ def get_player_stats(data):
     player_grenade = data["extended"]["values"]["weaponKillsGrenade"]["basic"]["value"]
     player_melee = data["extended"]["values"]["weaponKillsMelee"]["basic"]["value"]
     player_super = data["extended"]["values"]["weaponKillsSuper"]["basic"]["value"]
+    completed_activity = data["values"]["completed"]["basic"]["value"]
     return [player_name, player_time_played, player_class, player_light, player_kills, player_deaths,
-            player_kdr, player_kda, player_grenade, player_melee, player_super]
+            player_kdr, player_kda, player_grenade, player_melee, player_super, completed_activity]
 
