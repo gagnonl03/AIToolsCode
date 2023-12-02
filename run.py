@@ -6,10 +6,10 @@ import apistuff
 # RUN INSTRUCTIONS::
 
 # Change this to the name you want to save all the data to (im already running crota)
-output_name = "crotasplayers.csv"
+output_name = "vowplayers2.csv"
 
 # Rename this to the name file you want to read pcgrs from
-df = pd.read_csv("crotasend.csv", header=None)
+df = pd.read_csv("vowofthedisciple.csv", header=None)
 df.columns = ["pcgr", "time"]
 
 with open(output_name, "a", encoding="utf-8") as my_csv:
